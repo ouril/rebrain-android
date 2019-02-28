@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".screen.splash.SplashActivity"
+                android:theme="@style/AppTheme.Splash">
+        </activity>
     </application>
 
 </manifest>
