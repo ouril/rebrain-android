@@ -1,12 +1,12 @@
 package ru.rebrain.gruzdev.foodapp.screen.splash
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import ru.rebrain.gruzdev.foodapp.MainActivity
 import ru.rebrain.gruzdev.foodapp.R
 
 class SplashActivity : AppCompatActivity() {
@@ -17,6 +17,8 @@ class SplashActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             delay(500)
+
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             this@SplashActivity.finish()
         }
     }

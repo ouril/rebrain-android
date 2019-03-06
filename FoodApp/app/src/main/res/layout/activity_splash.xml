@@ -10,6 +10,7 @@
 
     <ImageView
             android:id="@+id/logo"
+            android:contentDescription="@string/app_name"
             android:src="@mipmap/ic_launcher_foreground"
             android:layout_gravity="center"
             android:layout_width="match_parent"
