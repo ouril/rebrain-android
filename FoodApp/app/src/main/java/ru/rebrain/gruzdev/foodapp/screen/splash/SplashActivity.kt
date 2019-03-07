@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import ru.rebrain.gruzdev.foodapp.MainActivity
 import ru.rebrain.gruzdev.foodapp.R
 
@@ -15,13 +16,16 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        GlobalScope.launch {
+        runBlocking {
             delay(500)
-
-            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-            this@SplashActivity.finish()
+            finish()
         }
     }
 
+    override fun finish() {
 
+        val intent = Intent(this@SplashActivity, MainActivity::class.java)
+        startActivity(intent)
+        super.finish()
+    }
 }
