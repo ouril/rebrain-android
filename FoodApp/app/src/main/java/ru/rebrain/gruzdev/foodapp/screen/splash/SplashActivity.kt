@@ -1,12 +1,8 @@
 package ru.rebrain.gruzdev.foodapp.screen.splash
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import ru.rebrain.gruzdev.foodapp.MainActivity
 import ru.rebrain.gruzdev.foodapp.R
 
@@ -15,17 +11,11 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-        runBlocking {
+        val scope = CoroutineScope(Dispatchers.Default)
+        scope.launch {
             delay(500)
+            MainActivity.start(this@SplashActivity)
             finish()
         }
-    }
-
-    override fun finish() {
-
-        val intent = Intent(this@SplashActivity, MainActivity::class.java)
-        startActivity(intent)
-        super.finish()
     }
 }
