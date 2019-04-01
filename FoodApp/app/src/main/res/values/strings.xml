@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FoodApp</string>
+
+    <string name="preference_file_key">foodAppPref</string>
+    <string name="preference_is_first_time">IS_FIRST_TIME</string>
+
+    <!-- INTRO -->
+    <string name="intro_title">Cервис для покупки еди</string>
+    <string name="intro_text">В этом приложении можно собрать продуктовую корзину по самым низким ценам</string>
+
 </resources>
