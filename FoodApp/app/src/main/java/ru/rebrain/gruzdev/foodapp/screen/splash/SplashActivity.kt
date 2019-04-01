@@ -21,7 +21,6 @@ class SplashActivity : AppCompatActivity(), CoroutineScope {
         val sharedPref = getSharedPreferences(
             PREFERENCE_FILE, Context.MODE_PRIVATE
         )
-
         launch {
             delay(500)
             startIntroOrMain(sharedPref)
@@ -39,6 +38,4 @@ class SplashActivity : AppCompatActivity(), CoroutineScope {
             IntroActivity.start(this@SplashActivity)
         } else MainActivity.start(this@SplashActivity)
     }
-
-
 }
