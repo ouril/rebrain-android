@@ -1,24 +1,23 @@
-package ru.rebrain.gruzdev.foodapp
+package ru.rebrain.gruzdev.foodapp.screen.intro
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.CoroutineScope
-import kotlin.coroutines.CoroutineContext
+import ru.rebrain.gruzdev.foodapp.MainActivity
+import ru.rebrain.gruzdev.foodapp.R
 
-
-class MainActivity : AppCompatActivity() {
-
+class IntroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_intro)
+
     }
 
     companion object {
         fun start(context: Context) {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, IntroActivity::class.java)
             context.startActivity(intent)
         }
     }
