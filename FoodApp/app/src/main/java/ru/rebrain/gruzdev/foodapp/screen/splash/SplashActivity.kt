@@ -8,36 +8,37 @@ import kotlinx.coroutines.*
 import ru.rebrain.gruzdev.foodapp.MainActivity
 import ru.rebrain.gruzdev.foodapp.R
 import ru.rebrain.gruzdev.foodapp.screen.intro.IntroActivity
+import ru.rebrain.gruzdev.foodapp.utils.SharedPrefUtil
 import kotlin.coroutines.CoroutineContext
 
+/**
+ * It's class for show some pretty when app is loading
+ * It's will be show for every time when app start
+ */
 class SplashActivity : AppCompatActivity(), CoroutineScope {
     override val coroutineContext: CoroutineContext = CoroutineScope(Dispatchers.Default).coroutineContext
-    val PREFERENCE_FILE = R.string.preference_file_key.toString()
-    val IS_A_FIRST_TIME = R.string.preference_is_first_time.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val sharedPref = getSharedPreferences(
-            PREFERENCE_FILE, Context.MODE_PRIVATE
+        val sharedPrefUtil = SharedPrefUtil.getInstance(
+            getSharedPreferences(
+                SharedPrefUtil.PREFERENCE_FILE, Context.MODE_PRIVATE
+            )
         )
-
         launch {
             delay(500)
-            startIntroOrMain(sharedPref)
+            startIntroOrMain(sharedPrefUtil)
             finish()
         }
     }
 
-    private fun SplashActivity.startIntroOrMain(sharedPref: SharedPreferences) {
-        if (sharedPref.getBoolean(IS_A_FIRST_TIME, true)) {
-
-            with(sharedPref.edit()) {
-                putBoolean(IS_A_FIRST_TIME, false)
-                apply()
-            }
+    private fun SplashActivity.startIntroOrMain(sharedPref: SharedPrefUtil) {
+        if (sharedPref.isFirstStart()) {
             IntroActivity.start(this@SplashActivity)
-        } else MainActivity.start(this@SplashActivity)
+        } else {
+            MainActivity.start(this@SplashActivity)
+        }
     }
 
 
