@@ -3,6 +3,9 @@ package ru.rebrain.gruzdev.foodapp.utils
 import android.content.SharedPreferences
 import ru.rebrain.gruzdev.foodapp.R
 
+/**
+ *  Special singletone class for work with Shared Preference
+ */
 object SharedPrefUtil {
     const val PREFERENCE_FILE = R.string.preference_file_key.toString()
 
@@ -14,15 +17,10 @@ object SharedPrefUtil {
         return this
     }
 
-    fun isFirstStart(): Boolean = if (sharedPrefInstance.getBoolean(IS_A_FIRST_TIME, true)) {
-        with(sharedPrefInstance.edit()) {
-            putBoolean(IS_A_FIRST_TIME, false)
-            apply()
-        }
-        true
-    } else {
-        false
+    fun getIsFirstStart(): Boolean = sharedPrefInstance.getBoolean(IS_A_FIRST_TIME, true)
+
+    fun setFirstStart() = with(sharedPrefInstance.edit()) {
+        putBoolean(IS_A_FIRST_TIME, false)
+        apply()
     }
-
-
 }
