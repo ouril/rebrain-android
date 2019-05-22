@@ -34,7 +34,7 @@ class SplashActivity : AppCompatActivity(), CoroutineScope {
     }
 
     private fun SplashActivity.startIntroOrMain(sharedPref: SharedPrefUtil) {
-        if (sharedPref.getIsFirstStart()) {
+        if (sharedPref.isFirstStart()) {
             sharedPref.setFirstStart()
             IntroActivity.start(this@SplashActivity)
         } else {

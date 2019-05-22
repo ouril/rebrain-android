@@ -17,7 +17,7 @@ object SharedPrefUtil {
         return this
     }
 
-    fun getIsFirstStart(): Boolean = sharedPrefInstance.getBoolean(IS_A_FIRST_TIME, true)
+    fun isFirstStart(): Boolean = sharedPrefInstance.getBoolean(IS_A_FIRST_TIME, true)
 
     fun setFirstStart() = with(sharedPrefInstance.edit()) {
         putBoolean(IS_A_FIRST_TIME, false)
