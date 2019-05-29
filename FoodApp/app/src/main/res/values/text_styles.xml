@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--BASE STYLES -->
+    <style name="BaseIntroText" parent="Base.Widget.AppCompat.TextView">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--INTRO BASE STYLES -->
+    <style name="IntroTitle" parent="BaseIntroText">
+        <item name="fontFamily">sans-serif</item>
+
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="IntroBody" parent="BaseIntroText">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!--STYLES -->
+    <style name="IntroTitle.Bold.Big" parent="IntroTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="IntroBody.Normal.Medium" parent="IntroBody">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

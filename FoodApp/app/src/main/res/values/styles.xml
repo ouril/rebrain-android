@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -9,26 +8,6 @@
 
     <style name="AppTheme.Splash" parent="AppTheme">
         <item name="android:windowBackground">@drawable/launch_screen</item>
-    </style>
-
-    <style name="BaseIntroText" parent="Base.Widget.AppCompat.TextView">
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:gravity">center_horizontal</item>
-    </style>
-
-    <style name="IntroTitle" parent="BaseIntroText">
-        <item name="fontFamily">sans-serif</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:letterSpacing">0.01</item>
-
-    </style>
-
-    <style name="IntroBody" parent="BaseIntroText">
-        <item name="fontFamily">sans-serif-light</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:letterSpacing">0.03</item>
     </style>
 
 </resources>
