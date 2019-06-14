@@ -18,12 +18,12 @@
     </style>
 
     <!--STYLES -->
-    <style name="Text.Title.Bold.Big" parent="Text.Title">
+    <style name="Text.Title.BoldBig">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">22sp</item>
     </style>
 
-    <style name="Text.Light.Medium" parent="Text.Light">
+    <style name="Text.Light.Medium">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
     </style>
