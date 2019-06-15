@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--BASE STYLES -->
+    <style name="BaseText" parent="Base.Widget.AppCompat.TextView">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--STYLES TYPES -->
+    <style name="Text.Title" parent="BaseText">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Text.Light" parent="BaseText">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!--STYLES -->
+    <style name="Text.Title.BoldBig">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Text.Light.Medium">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>
